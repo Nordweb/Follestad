@@ -1,0 +1,259 @@
+<block name="formkey" type="core/template" template="core/formkey.phtml"/>
+<label>All Pages</label>
+<block type="page/html" name="root" output="toHtml" template="page/3columns.phtml">
+   <block type="page/html" name="gravdept.html" as="gravdept_html" template="gravdept/page/html/html.phtml"/>
+   <block type="page/html_head" name="head" as="head">
+      <action method="addJs">
+         <script>prototype/prototype.js</script>
+      </action>
+      <action method="addJs">
+         <script>lib/ccard.js</script>
+      </action>
+      <action method="addJs">
+         <script>prototype/validation.js</script>
+      </action>
+      <action method="addJs">
+         <script>scriptaculous/effects.js</script>
+      </action>
+      <action method="addJs">
+         <script>scriptaculous/controls.js</script>
+      </action>
+      <action method="addJs">
+         <script>varien/js.js</script>
+      </action>
+      <action method="addJs">
+         <script>varien/form.js</script>
+      </action>
+      <action method="addJs">
+         <script>mage/translate.js</script>
+      </action>
+      <action method="addJs">
+         <script>mage/cookies.js</script>
+      </action>
+      <block type="page/js_cookie" name="js_cookies" template="page/js/cookie.phtml"/>
+      <action method="addCss">
+         <stylesheet>css/base.css</stylesheet>
+      </action>
+      <action method="addCss">
+         <stylesheet>css/override.css</stylesheet>
+      </action>
+   </block>
+   <block type="core/text_list" name="after_body_start" as="after_body_start" translate="label">
+      <label>Page Top</label>
+   </block>
+   <block type="page/html_notices" name="global_notices" as="global_notices" template="page/html/notices.phtml"/>
+   <block type="page/html_header" name="header" as="header">
+      <block type="core/text_list" name="top.menu" as="topMenu" translate="label">
+         <label>Navigation Bar</label>
+      </block>
+      <block type="page/template_links" name="top.links" as="topLinks"/>
+      <block type="page/template_links" name="top.cart" as="topCart"/>
+      <block type="page/html_wrapper" name="top.container" as="topContainer" translate="label">
+         <label>Page Header</label>
+         <action method="setElementClass">
+            <value>top-container</value>
+         </action>
+      </block>
+   </block>
+   <block type="core/text_list" name="gravdept_title_banner" as="gravdept_titleBanner"/>
+   <block type="page/html_breadcrumbs" name="breadcrumbs" as="breadcrumbs"/>
+   <block type="core/messages" name="global_messages" as="global_messages"/>
+   <block type="core/messages" name="messages" as="messages"/>
+   <block type="core/text_list" name="left" as="left" translate="label">
+      <label>Left Column</label>
+   </block>
+   <block type="core/text_list" name="content" as="content" translate="label">
+      <label>Main Content Area</label>
+   </block>
+   <block type="core/text_list" name="right" as="right" translate="label">
+      <label>Right Column</label>
+   </block>
+   <block type="page/html_footer" name="footer" as="footer" template="page/html/footer.phtml">
+      <block type="page/html_wrapper" name="bottom.container" as="bottomContainer" translate="label">
+         <label>Page Footer</label>
+         <action method="setElementClass">
+            <value>bottom-container</value>
+         </action>
+      </block>
+      <block type="page/switch" name="store_language" as="store_language" template="page/switch/languages.phtml"/>
+      <block type="page/switch" name="store_switcher" as="store_switcher" template="page/switch/stores.phtml"/>
+      <block type="directory/currency" name="currency" as="store_currency" template="directory/currency.phtml"/>
+   </block>
+   <block type="core/text_list" name="before_body_end" as="before_body_end" translate="label">
+      <label>Page Bottom</label>
+      <block type="core/template" name="gravdept.jquery.load" before="-" template="gravdept/jquery/load.phtml"/>
+      <block type="core/template" name="gravdept.jquery.run" after="gravdept.jquery.load" template="gravdept/jquery/run.phtml"/>
+   </block>
+</block>
+<block type="core/profiler" output="toHtml" name="core_profiler"/>
+<reference name="head">
+   <block type="core/template" name="optional_zip_countries" as="optional_zip_countries" template="directory/js/optional_zip_countries.phtml"/>
+</reference>
+<reference name="top.menu">
+   <block type="catalog/navigation" name="catalog.topnav" template="catalog/navigation/top.phtml"/>
+</reference>
+<block type="catalog/product_price_template" name="catalog_product_price_template"/>
+<reference name="catalog_product_price_template">
+   <action method="addPriceBlockType">
+      <type>msrp</type>
+      <block>catalog/product_price</block>
+      <template>catalog/product/price_msrp.phtml</template>
+   </action>
+   <action method="addPriceBlockType">
+      <type>msrp_item</type>
+      <block>catalog/product_price</block>
+      <template>catalog/product/price_msrp_item.phtml</template>
+   </action>
+   <action method="addPriceBlockType">
+      <type>msrp_noform</type>
+      <block>catalog/product_price</block>
+      <template>catalog/product/price_msrp_noform.phtml</template>
+   </action>
+</reference>
+<reference name="header">
+   <block type="core/template" name="top.search" as="topSearch" template="catalogsearch/form.mini.phtml"/>
+</reference>
+<reference name="footer_links">
+   <block type="sales/guest_links" name="return_link"/>
+   <action method="addLinkBlock">
+      <blockName>return_link</blockName>
+   </action>
+</reference>
+<reference name="top.cart">
+   <block type="checkout/links" name="checkout_cart_link">
+      <action method="addCartLink"/>
+   </block>
+</reference>
+<reference name="header">
+   <block type="checkout/cart_sidebar" name="cart_sidebar" as="topCartContents" template="checkout/cart/sidebar.phtml" before="-">
+      <action method="addItemRender">
+         <type>simple</type>
+         <block>checkout/cart_item_renderer</block>
+         <template>checkout/cart/sidebar/default.phtml</template>
+      </action>
+      <action method="addItemRender">
+         <type>grouped</type>
+         <block>checkout/cart_item_renderer_grouped</block>
+         <template>checkout/cart/sidebar/default.phtml</template>
+      </action>
+      <action method="addItemRender">
+         <type>configurable</type>
+         <block>checkout/cart_item_renderer_configurable</block>
+         <template>checkout/cart/sidebar/default.phtml</template>
+      </action>
+      <block type="core/text_list" name="cart_sidebar.extra_actions" as="extra_actions" translate="label" module="checkout">
+         <label>Shopping Cart Sidebar Extra Actions</label>
+      </block>
+   </block>
+</reference>
+<reference name="head">
+   <block type="core/template" name="optional_zip_countries" as="optional_zip_countries" template="directory/js/optional_zip_countries.phtml"/>
+</reference>
+<reference name="topCart.extra_actions">
+   <block type="paypal/express_shortcut" name="paypal.partner.top_cart.shortcut" template="paypal/express/shortcut.phtml"/>
+</reference>
+<reference name="cart_sidebar.extra_actions">
+   <block type="paypal/express_shortcut" name="paypal.partner.cart_sidebar.shortcut" template="paypal/express/shortcut.phtml"/>
+</reference>
+<reference name="before_body_end">
+   <block type="googleanalytics/ga" name="google_analytics" as="google_analytics" after="-"/>
+</reference>
+<reference name="top.links">
+   <block type="wishlist/links" name="wishlist_link"/>
+   <action method="addLinkBlock">
+      <blockName>wishlist_link</blockName>
+   </action>
+</reference>
+<reference name="topCart.extra_actions">
+   <block type="paypaluk/express_shortcut" name="paypaluk.partner.top_cart.shortcut" template="paypal/express/shortcut.phtml"/>
+</reference>
+<reference name="cart_sidebar.extra_actions">
+   <block type="paypaluk/express_shortcut" name="paypaluk.partner.cart_sidebar.shortcut" template="paypal/express/shortcut.phtml"/>
+</reference>
+<reference name="footer_links">
+   <action method="addLink" translate="label title" module="rss" ifconfig="rss/config/active">
+      <label>RSS</label>
+      <url>rss</url>
+      <title>RSS</title>
+      <prepare>true</prepare>
+      <urlParams/>
+      <position/>
+      <li/>
+      <a>class=&quot;link-rss&quot;</a>
+   </action>
+</reference>
+<block type="rss/list" name="head_rss" ifconfig="rss/config/active"/>
+<reference name="cart_sidebar">
+   <action method="addItemRender">
+      <type>bundle</type>
+      <block>bundle/checkout_cart_item_renderer</block>
+      <template>checkout/cart/sidebar/default.phtml</template>
+   </action>
+</reference>
+<reference name="wishlist_sidebar">
+   <action method="addPriceBlockType">
+      <type>bundle</type>
+      <block>bundle/catalog_product_price</block>
+      <template>bundle/catalog/product/price.phtml</template>
+   </action>
+</reference>
+<reference name="catalog_product_price_template">
+   <action method="addPriceBlockType">
+      <type>bundle</type>
+      <block>bundle/catalog_product_price</block>
+      <template>bundle/catalog/product/price.phtml</template>
+   </action>
+</reference>
+<reference name="footer">
+   <block type="newsletter/subscribe" name="newsletter" as="newsletter" template="newsletter/subscribe.phtml"/>
+</reference>
+<reference name="head">
+   <action method="addCss">
+      <stylesheet>css/eucookielaw.css</stylesheet>
+   </action>
+   <action method="addItem">
+      <type>skin_js</type>
+      <name>js/eucookielaw.js</name>
+      <params/>
+   </action>
+   <block type="core/template" template="eucookielaw/js.phtml"/>
+</reference>
+<reference name="after_body_start">
+   <block type="core/template" name="tagmanager_script" template="tagmanager/script.phtml"/>
+</reference>
+<label>CMS Pages (All)</label>
+<reference name="content">
+   <block type="cms/page" name="cms_page"/>
+</reference>
+<label>CMS No-Route Page</label>
+<label>All One-Column Layout Pages</label>
+<reference name="root">
+   <action method="setTemplate">
+      <template>page/1column.phtml</template>
+   </action>
+   <action method="setIsHandle">
+      <applied>1</applied>
+   </action>
+</reference>
+<reference name="top.links">
+   <action method="addLink" translate="label title" module="customer">
+      <label>Log In</label>
+      <url helper="customer/getLoginUrl"/>
+      <title>Log In</title>
+      <prepare/>
+      <urlParams/>
+      <position>3</position>
+   </action>
+   <action method="addLink" translate="label title" module="customer">
+      <label>Sign Up</label>
+      <url helper="customer/getRegisterUrl"/>
+      <title>Sign Up</title>
+      <prepare/>
+      <urlParams/>
+      <position>4</position>
+   </action>
+</reference>
+<remove name="reorder"/>
+<reference name="right">
+   <block type="sales/reorder_sidebar" name="sale.reorder.sidebar" as="reorder" template="sales/reorder/sidebar.phtml"/>
+</reference>

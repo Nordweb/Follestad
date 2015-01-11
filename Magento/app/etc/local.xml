@@ -26,41 +26,43 @@
  */
 -->
 <config>
-    <global>
-        <install>
-            <date><![CDATA[Thu, 02 Feb 2012 11:21:08 +0000]]></date>
-        </install>
-        <crypt>
-            <key><![CDATA[45e94c02255c137d7a4e35b314b3c52f]]></key>
-        </crypt>
-        <disable_local_modules>false</disable_local_modules>
-        <resources>
-            <db>
-                <table_prefix><![CDATA[follestad_]]></table_prefix>
-            </db>
-            <default_setup>
-                <connection>
-                    <host><![CDATA[localhost]]></host>
-                    <username><![CDATA[root]]></username>
-                    <password><![CDATA[veryhardpassword123]]></password>
-                    <dbname><![CDATA[follestad_prod]]></dbname>
-                    <initStatements><![CDATA[SET NAMES utf8]]></initStatements>
-                    <model><![CDATA[mysql4]]></model>
-                    <type><![CDATA[pdo_mysql]]></type>
-                    <pdoType><![CDATA[]]></pdoType>
-                    <active>1</active>
-                </connection>
-            </default_setup>
-        </resources>
-        <session_save><![CDATA[db]]></session_save>
-    </global>
-    <admin>
-        <routers>
-            <adminhtml>
-                <args>
-                    <frontName><![CDATA[admin]]></frontName>
-                </args>
-            </adminhtml>
-        </routers>
-    </admin>
+  <global>
+    <install>
+      <date><![CDATA[Thu, 02 Feb 2012 11:21:08 +0000]]></date>
+    </install>
+    <crypt>
+      <key><![CDATA[45e94c02255c137d7a4e35b314b3c52f]]></key>
+    </crypt>
+    <disable_local_modules>false</disable_local_modules>
+    <resources>
+      <db>
+        <table_prefix><![CDATA[follestad_]]></table_prefix>
+      </db>
+      <default_setup>
+        <connection>
+          <host><![CDATA[213.162.241.99]]></host>
+          <!--<username><![CDATA[root]]></username>
+                    <password><![CDATA[veryhardpassword123]]></password>-->
+          <username><![CDATA[follexln]]></username>
+          <password><![CDATA[Follestad321]]></password>
+          <dbname><![CDATA[follexln_dev]]></dbname>
+          <initStatements><![CDATA[SET NAMES utf8]]></initStatements>
+          <model><![CDATA[mysql4]]></model>
+          <type><![CDATA[pdo_mysql]]></type>
+          <pdoType><![CDATA[]]></pdoType>
+          <active>1</active>
+        </connection>
+      </default_setup>
+    </resources>
+    <session_save><![CDATA[db]]></session_save>
+  </global>
+  <admin>
+    <routers>
+      <adminhtml>
+        <args>
+          <frontName><![CDATA[admin]]></frontName>
+        </args>
+      </adminhtml>
+    </routers>
+  </admin>
 </config>

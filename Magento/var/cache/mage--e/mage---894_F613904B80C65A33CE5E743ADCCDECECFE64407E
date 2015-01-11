@@ -1,0 +1,40 @@
+
+	
+	<div id="filter" class="callout">
+		<h2>Sorter etter</h2>
+		
+		<div class="filters">
+			<dl class="inactive">
+				<dt>Kategori</dt>
+				<dd>
+					<ol>
+																					<li>
+									<a href="http://dev.follestad.no/mann/skjorter/fritids-skjorter.html?___SID=U">
+										<span class="count">13</span>
+										Fritids-skjorter 									</a>
+								</li>
+																												<li>
+									<a href="http://dev.follestad.no/mann/skjorter/eton.html?___SID=U">
+										<span class="count">32</span>
+										Eton 									</a>
+								</li>
+																												<li>
+									<a href="http://dev.follestad.no/mann/skjorter/blaa.html?___SID=U">
+										<span class="count">26</span>
+										Blå									</a>
+								</li>
+																												<li>
+									<a href="http://dev.follestad.no/mann/skjorter/pique-1.html?___SID=U">
+										<span class="count">3</span>
+										PIQUE									</a>
+								</li>
+																												<li>
+									<a href="http://dev.follestad.no/mann/skjorter/t-skjorter.html?___SID=U">
+										<span class="count">12</span>
+										T-SKJORTER									</a>
+								</li>
+																		</ol>
+				</dd>
+			</dl>
+		</div>
+	</div>

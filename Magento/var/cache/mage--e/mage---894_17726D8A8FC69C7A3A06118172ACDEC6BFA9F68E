@@ -1,0 +1,78 @@
+<div id="footer">
+    <div id="footer-bar" class="block">
+        <div class="newsletter">
+            
+<form id="newsletter-form" action="#subscribe" method="post">
+	<label for="newsletter-email">Meld deg på vårt nyhetsbrev</label>
+	<input type="text" id="newsletter-email" name="pf_Email" class="required-entry validate-email" placeholder="navn@eksempel.com" />
+						<input type="hidden" name="pf_FormType" value="OptInForm" />
+						<input type="hidden" name="pf_OptInMethod" value="SingleOptInMethod" />
+						<input type="hidden" name="pf_CounterDemogrFields" value="0" />
+						<input type="hidden" name="pf_CounterMailinglists" value="1" />
+						<input type="hidden" name="pf_AccountId" value="8052" />
+						<input type="hidden" name="pf_ListById" value="1" />
+						<input type="hidden" name="pf_Version" value="2" />
+						<input type="hidden" name="pf_MailinglistName1" value="119615" />
+						<input type="hidden" name="formId" value="4243514B7447455E4771" />
+						<input type="hidden" name="pf_SubscriberName" value="" />
+	<div style="display: none" id="advice-validate-email-newsletter-email" class="validation-advice"></div>
+	<button type="submit">Abonnere</button>
+</form>
+
+<script type="text/javascript">
+	//<![CDATA[
+	//var newsletterSubscriberFormDetail = new VarienForm('newsletter-form');
+	
+	//]]>
+</script>
+        </div>
+        <a class="top" href="#top" title="Return to top">
+            <span>Til toppen</span>
+        </a>
+    </div>
+    <div id="closer" class="grid">
+        <div class="grid_8">
+            <ul class="footer-links">
+<li>
+<h2>Follestad</h2>
+<ul>
+<li><a href="http://follestad.no/om_oss/">Om oss</a></li>
+<li><a href="http://blogg.follestad.com/" target="_blank">Herre bloggen</a></li>
+<li><a href="http://dameblogg.follestad.com/" target="_blank">Dame bloggen</a></li>
+<li><a href="http://follestad.no/kontakt_oss">Presse</a></li>
+<li><a href="http://follestad.no/kontakt_oss">Ledige stillinger</a></li>
+</ul>
+</li>
+<li class="help">
+<h2>Kundeservice</h2>
+<ul>
+<li><a href="http://follestad.no/kontakt_oss">Kontakt</a></li>
+<li><a href="http://follestad.no/faq">Ofte stilte sp&oslash;rsm&aring;l</a></li>
+<li><a href="http://follestad.no/retur">Forsendelser</a></li>
+<li><a href="http://follestad.no/retur">Retur</a></li>
+</ul>
+</li>
+<li class="retail">
+<h2>Adresse</h2>
+<p>Akersgaten 28<br />0158 Oslo</p>
+</li>
+<li class="retail"> </li>
+<li class="follow">
+<h2>F&oslash;lg oss</h2>
+<p><a class="fb" title="Follow on Facebook" href="http://www.facebook.com/pages/Follestad/127893900556720">Facebook</a> <a class="gp" title="Blogg" href="http://blogg.follestad.com/">Blogg</a></p>
+</li>
+</ul>        </div>
+        <div class="grid_4">
+            <div class="switchers">
+                                                            </div>
+            <div class="legal">
+                <p class="copyright">&copy; 2015 Powered by <A HREF="http://nordweb.no/" TARGET="_blank">Test</A></p>
+                <p class="terms">
+                    <a href="http://dev.follestad.no/betingelser/">Betingelser og villkår</a>
+                    <a href="http://dev.follestad.no/personvern/">Personvern</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="payment-methods"></div>
+</div>
